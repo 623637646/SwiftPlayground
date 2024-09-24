@@ -1,4 +1,9 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
+import RxSwift
 
-print("Hello, world!")
+let disposeBag = DisposeBag()
+
+Observable.of("Hello, RxSwift!")
+    .subscribe(onNext: { value in
+        print(value)
+    })
+    .disposed(by: disposeBag)
